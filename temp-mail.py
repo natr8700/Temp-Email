@@ -1,10 +1,13 @@
 import os
 from colorama import Fore
 from mailtm import Email
-os.system("cls")
+
+os.system("cls") # clean up
+
 def temp_mail(message):
     print("\nSubject: " + message['subject'])
     print("Content: " + message['text'] if message['text'] else message['html'])
+    
 tempmail = Email()
 print(Fore.RED + 
 """
@@ -17,7 +20,8 @@ print(Fore.RED +
                         | |                                    
                         |_|                                    
 """)
+
 tempmail.register()
-print(Fore.BLUE + "\nEmail Adress: " + str(tempmail.address))
+print(Fore.BLUE + "\nEmail Adress: " + str(tempmail.address)) # print email address
 tempmail.start(temp_mail, interval=1)
-print(Fore.GREEN + "\nWaiting for new email . . .")
+print(Fore.GREEN + "\nWaiting for new email . . .") # ready
